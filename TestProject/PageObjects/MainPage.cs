@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace TestProject.PageObjects
 {
-    class MainPage
+    public class MainPage
     {
-        private readonly IWebDriver driver;
+        private IWebDriver driver;
         private const string uri = @"https://skay.ua/";
         [FindsBy(How = How.XPath, Using = "//a[@class='login']")]
         private IWebElement loginLink;
 
-        public MainPage(IWebDriver driver)
+        private MainPage(IWebDriver driver)
         {
             this.driver = driver;
 
@@ -29,6 +29,18 @@ namespace TestProject.PageObjects
             driver.Navigate().GoToUrl(uri);
 
             return new MainPage(driver);
+        }
+
+        public LoginPage GoToLogin()
+        {
+            loginLink.Click();
+
+            return LoginPage.InitializeLoginPage(driver);
+        }
+
+        public string GetTitle()
+        {
+            return driver.Title;
         }
     }
 }

@@ -23,3 +23,9 @@ C:\Users\Alex\Source\Repos\TestProject\TestProject\obj\Debug\TestProject.csproj.
 C:\Users\Alex\Source\Repos\TestProject\TestProject\obj\Debug\TestProject.csproj.CopyComplete
 C:\Users\Alex\Source\Repos\TestProject\TestProject\obj\Debug\TestProject.dll
 C:\Users\Alex\Source\Repos\TestProject\TestProject\obj\Debug\TestProject.pdb
+C:\Users\Alex\Source\Repos\TestProject\TestProject\bin\Debug\FluentAssertions.dll
+C:\Users\Alex\Source\Repos\TestProject\TestProject\bin\Debug\FluentAssertions.pdb
+C:\Users\Alex\Source\Repos\TestProject\TestProject\bin\Debug\FluentAssertions.xml
+C:\Users\Alex\Source\Repos\TestProject\TestProject\bin\Debug\Dynamitey.dll
+C:\Users\Alex\Source\Repos\TestProject\TestProject\bin\Debug\ImpromptuInterface.dll
+C:\Users\Alex\Source\Repos\TestProject\TestProject\bin\Debug\SpecFlow.Assist.Dynamic.dll
