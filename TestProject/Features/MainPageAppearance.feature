@@ -1,5 +1,5 @@
 ﻿Feature: MainPageAppearance
-	User should be able to access the main page of web app
+	User should be able to access to the main page of web app
 
 Scenario: Main Page Appearance
 	Given web browser is opened
