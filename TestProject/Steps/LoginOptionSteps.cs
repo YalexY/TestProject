@@ -6,13 +6,14 @@ using System.Collections.Generic;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using TestProject.PageObjects;
+using TestProject.Steps;
 
 namespace TestProject
 {
     [Binding]
     public class LoginOptionSteps
     {
-        private IWebDriver driver = new ChromeDriver();
+        private IWebDriver driver = ScenarioContext.Current.Get<IWebDriver>("driver");
 
         [Given(@"main page is opened")]
         public void GivenMainPageIsOpened()
@@ -43,19 +44,12 @@ namespace TestProject
             ScenarioContext.Current.Add("privateCabinetPage", privateCabinetPage);
         }
         
-        [When(@"press submit button")]
-        public void WhenPressSubmitButton()
-        {
-            var loginPage = ScenarioContext.Current.Get<LoginPage>("loginPage");
-            
-        }
-        
         [Then(@"login has been successful")]
         public void ThenLoginHasBeenSuccessful()
         {
             var privateCabinetPage = ScenarioContext.Current.Get<PrivateCabinetPage>("privateCabinetPage");
 
-            privateCabinetPage.GetTitle().Should().BeEquivalentTo("Интернет-магазин Скай — купить смартфон, мобильный телефон в Одессе, c доставкой по Украине");
+            privateCabinetPage.GetTitle().Should().BeEquivalentTo("Мой аккаунт - Интернет-магазин Skay.ua");
         }
     }
 }
