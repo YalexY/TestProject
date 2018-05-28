@@ -1,6 +1,5 @@
 ﻿using FluentAssertions;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
 using TestProject.PageObjects;
 
@@ -9,12 +8,12 @@ namespace TestProject.Steps
     [Binding]
     public class MainPageAppearanceSteps
     {
-        private IWebDriver driver = new ChromeDriver(); 
+        private IWebDriver driver = ScenarioContext.Current.Get<IWebDriver>("driver");
 
         [Given(@"web browser is opened")]
         public void GivenWebBrowserIsOpened()
         {
-            driver.Manage().Window.Maximize();
+            driver.Should().NotBeNull("Driver is null");
         }
         
         [When(@"type url: (.*) to the browser")]

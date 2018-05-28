@@ -80,13 +80,11 @@ this.ScenarioSetup(scenarioInfo);
                         "username",
                         "password"});
             table1.AddRow(new string[] {
-                        "zuk48494@soioa.com",
-                        "Qwer!234"});
+                        "a.yuzhniy86@gmail.com",
+                        "gJ4Lr+SX"});
 #line 7
   testRunner.And("type username and password", ((string)(null)), table1, "And ");
 #line 10
-  testRunner.And("press submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
  testRunner.Then("login has been successful", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

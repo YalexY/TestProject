@@ -1,10 +1,5 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestProject.PageObjects
 {
@@ -42,7 +37,7 @@ namespace TestProject.PageObjects
             emailField.SendKeys(email);
             passwordField.Clear();
             passwordField.SendKeys(password);
-            submitButton.Submit();
+            submitButton.Click();
 
             return PrivateCabinetPage.Initialize(driver);
         }
