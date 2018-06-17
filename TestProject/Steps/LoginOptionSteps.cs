@@ -13,12 +13,10 @@ namespace TestProject
     [Binding]
     public class LoginOptionSteps
     {
-        private IWebDriver driver = ScenarioContext.Current.Get<IWebDriver>("driver");
-
         [Given(@"main page is opened")]
         public void GivenMainPageIsOpened()
         {
-            var homePage = MainPage.NavigateTo(driver);
+            var homePage = MainPage.NavigateTo();
 
             homePage.GetTitle().Should().BeEquivalentTo("Интернет-магазин Скай — купить смартфон, мобильный телефон в Одессе, c доставкой по Украине");
 

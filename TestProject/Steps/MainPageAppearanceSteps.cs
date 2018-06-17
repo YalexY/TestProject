@@ -8,18 +8,16 @@ namespace TestProject.Steps
     [Binding]
     public class MainPageAppearanceSteps
     {
-        private IWebDriver driver = ScenarioContext.Current.Get<IWebDriver>("driver");
-
         [Given(@"web browser is opened")]
         public void GivenWebBrowserIsOpened()
         {
-            driver.Should().NotBeNull("Driver is null");
+            BasePage.driver.Should().NotBeNull("Driver is null");
         }
         
         [When(@"type url: (.*) to the browser")]
         public void WhenTypeUrlToTheBrowser(string url)
         {
-            var homePage = MainPage.NavigateTo(driver);
+            var homePage = MainPage.NavigateTo();
 
             ScenarioContext.Current.Add("homePage", homePage);
         }

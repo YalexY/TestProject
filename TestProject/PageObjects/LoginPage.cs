@@ -3,10 +3,8 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace TestProject.PageObjects
 {
-    public class LoginPage
+    public class LoginPage : BasePage
     {
-        private IWebDriver driver;
-
         [FindsBy(How = How.XPath, Using = ".//*[@id='email']")]
         private IWebElement emailField;
 
@@ -17,18 +15,16 @@ namespace TestProject.PageObjects
         private IWebElement submitButton;
 
 
-        private LoginPage(IWebDriver driver)
+        private LoginPage()
         {
-
-            this.driver = driver;
 #pragma warning disable CS0618 // Type or member is obsolete
             PageFactory.InitElements(driver, this);
 #pragma warning restore CS0618 // Type or member is obsolete
 
         }
-        public static LoginPage InitializeLoginPage(IWebDriver driver)
+        public static LoginPage InitializeLoginPage()
         {
-            return new LoginPage(driver);
+            return new LoginPage();
         }
 
         public PrivateCabinetPage LoggingIn(string email, string password)
@@ -39,13 +35,7 @@ namespace TestProject.PageObjects
             passwordField.SendKeys(password);
             submitButton.Click();
 
-            return PrivateCabinetPage.Initialize(driver);
+            return PrivateCabinetPage.Initialize();
         }
-
-        public string GetTitle()
-        {
-            return driver.Title;
-        }
-
     }
 }
