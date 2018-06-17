@@ -1,29 +1,27 @@
 ﻿using System;
+using System.Configuration;
 using Allure.Commons;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
+using TestProject.PageObjects;
 
 namespace TestProject.Steps
 {
     [Binding]
     public sealed class Hooks
     {
-        private static IWebDriver driver;
-
         [BeforeScenario]
         public void BeforeScenario()
         {
-            driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-
-            ScenarioContext.Current.Add("driver", driver);
+            BasePage.driver = new ChromeDriver(ConfigurationManager.AppSettings["Chrome"]);
+            BasePage.driver.Manage().Window.Maximize();
         }
 
         [AfterScenario]
         public void AfterScenario()
         {
-            driver.Quit();
+            BasePage.driver.Quit();
         }
     }
 }

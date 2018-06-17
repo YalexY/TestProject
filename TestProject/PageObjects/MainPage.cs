@@ -8,39 +8,30 @@ using System.Threading.Tasks;
 
 namespace TestProject.PageObjects
 {
-    public class MainPage
+    public class MainPage : BasePage
     {
-        private IWebDriver driver;
         private const string uri = @"https://skay.ua/";
         [FindsBy(How = How.XPath, Using = "//a[@class='login']")]
         private IWebElement loginLink;
 
-        private MainPage(IWebDriver driver)
+        private MainPage()
         {
-            this.driver = driver;
-
+            driver.Navigate().GoToUrl(uri);
 #pragma warning disable CS0618 // Type or member is obsolete
-            PageFactory.InitElements(this.driver, this);
+            PageFactory.InitElements(driver, this);
 #pragma warning restore CS0618 // Type or member is obsolete
         }
 
-        public static MainPage NavigateTo(IWebDriver driver)
+        public static MainPage NavigateTo()
         {
-            driver.Navigate().GoToUrl(uri);
-
-            return new MainPage(driver);
+            return new MainPage();
         }
 
         public LoginPage GoToLogin()
         {
             loginLink.Click();
 
-            return LoginPage.InitializeLoginPage(driver);
-        }
-
-        public string GetTitle()
-        {
-            return driver.Title;
+            return LoginPage.InitializeLoginPage();
         }
     }
 }

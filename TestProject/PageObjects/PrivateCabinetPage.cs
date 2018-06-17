@@ -8,10 +8,8 @@ using System.Threading.Tasks;
 
 namespace TestProject.PageObjects
 {
-    public class PrivateCabinetPage
+    public class PrivateCabinetPage : BasePage
     {
-        private IWebDriver driver;
-
         [FindsBy(How = How.XPath, Using = "//*[@title = 'Добавить адрес']")]
         private IWebElement addAddressButton;
 
@@ -33,23 +31,16 @@ namespace TestProject.PageObjects
         [FindsBy(How = How.XPath, Using = "//*[@title='Мой список ожидания']")]
         private IWebElement wishListButton;
 
-        private PrivateCabinetPage(IWebDriver driver)
+        private PrivateCabinetPage()
         {
-            this.driver = driver;
-
 #pragma warning disable CS0618 // Type or member is obsolete
-            PageFactory.InitElements(this.driver, this);
+            PageFactory.InitElements(driver, this);
 #pragma warning restore CS0618 // Type or member is obsolete
         }
 
-        public static PrivateCabinetPage Initialize(IWebDriver driver)
+        public static PrivateCabinetPage Initialize()
         {
-            return new PrivateCabinetPage(driver);
-        }
-
-        public string GetTitle()
-        {
-            return driver.Title;
+            return new PrivateCabinetPage();
         }
     }
 }
