@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentAssertions;
 
 namespace TestProject.Extensions
 {
-    class Helper
+    public static class Helper
     {
+        public static void IsAllPropertiesInitialized<T>(T obj)
+        {
+            foreach(var property in obj.GetType().GetProperties())
+            {
+                property.GetValue(obj).Should().NotBeNull("Property {0} is null", property.Name);
+            }
+        }
     }
 }

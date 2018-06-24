@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Configuration;
-using Allure.Commons;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
 using TestProject.PageObjects;

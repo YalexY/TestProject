@@ -1,5 +1,4 @@
 ﻿using FluentAssertions;
-using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 using TestProject.PageObjects;
 
@@ -8,12 +7,15 @@ namespace TestProject.Steps
     [Binding]
     public class MainPageAppearanceSteps
     {
+        #region Given
         [Given(@"web browser is opened")]
         public void GivenWebBrowserIsOpened()
         {
             BasePage.driver.Should().NotBeNull("Driver is null");
         }
-        
+        #endregion
+
+        #region When
         [When(@"type url: (.*) to the browser")]
         public void WhenTypeUrlToTheBrowser(string url)
         {
@@ -21,7 +23,9 @@ namespace TestProject.Steps
 
             ScenarioContext.Current.Add("homePage", homePage);
         }
-        
+        #endregion
+
+        #region Then
         [Then(@"user is on the main page")]
         public void ThenUserIsOnTheMainPage()
         {
@@ -30,5 +34,6 @@ namespace TestProject.Steps
             homePage.GetTitle().Should().BeEquivalentTo("Интернет-магазин Скай — купить смартфон, мобильный телефон в Одессе, c доставкой по Украине");
 
         }
+        #endregion
     }
 }

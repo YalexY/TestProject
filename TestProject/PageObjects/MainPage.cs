@@ -1,10 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
+using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestProject.PageObjects
 {
@@ -17,6 +14,7 @@ namespace TestProject.PageObjects
         private MainPage()
         {
             driver.Navigate().GoToUrl(uri);
+            WaitUntill(By.XPath("//a[@class='login']"));
 #pragma warning disable CS0618 // Type or member is obsolete
             PageFactory.InitElements(driver, this);
 #pragma warning restore CS0618 // Type or member is obsolete

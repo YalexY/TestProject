@@ -88,6 +88,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\ArgumentTransformations.cs" />
     <Compile Include="Extensions\Helper.cs" />
     <Compile Include="Features\LoginOption.feature.cs">
       <AutoGen>True</AutoGen>
@@ -99,6 +100,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MainPageAppearance.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\PrivateCabinetOptions.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrivateCabinetOptions.feature</DependentUpon>
+    </Compile>
     <Compile Include="PageObjects\BasePage.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="PageObjects\MainPage.cs" />
@@ -107,6 +113,7 @@
     <Compile Include="Steps\LoginOptionSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\MainPageAppearanceSteps.cs" />
+    <Compile Include="Steps\PrivateCabinetOptionsSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="allureConfig.json" />
@@ -118,6 +125,10 @@
     <None Include="Features\MainPageAppearance.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>MainPageAppearance.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\PrivateCabinetOptions.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PrivateCabinetOptions.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
