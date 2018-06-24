@@ -10,8 +10,8 @@ namespace TestProject.PageObjects
 {
     public class PrivateCabinetPage : BasePage
     {
-        [FindsBy(How = How.XPath, Using = "//*[@title = 'Добавить адрес']")]
-        private IWebElement addAddressButton;
+        [FindsBy(How = How.XPath, Using = "//*[@title = 'Log me out']")]
+        private IWebElement exitButton;
 
         [FindsBy(How = How.XPath, Using = "//*[@title = 'Заказы']")]
         private IWebElement ordersButton;
@@ -25,7 +25,7 @@ namespace TestProject.PageObjects
         [FindsBy(How = How.XPath, Using = "//*[@title='Купоны']")]
         private IWebElement cuponButton;
 
-        [FindsBy(How = How.XPath, Using = "//*[@class='mailalerts']")]
+        [FindsBy(How = How.XPath, Using = "//*[@title='Мои уведомления']")]
         private IWebElement myMailButton;
 
         [FindsBy(How = How.XPath, Using = "//*[@title='Мой список ожидания']")]
@@ -33,6 +33,7 @@ namespace TestProject.PageObjects
 
         private PrivateCabinetPage()
         {
+            WaitUntill(By.XPath("//*[@title = 'Информация']"));
 #pragma warning disable CS0618 // Type or member is obsolete
             PageFactory.InitElements(driver, this);
 #pragma warning restore CS0618 // Type or member is obsolete

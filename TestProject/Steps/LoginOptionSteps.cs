@@ -1,18 +1,14 @@
 ﻿using FluentAssertions;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System;
-using System.Collections.Generic;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using TestProject.PageObjects;
-using TestProject.Steps;
 
 namespace TestProject
 {
     [Binding]
     public class LoginOptionSteps
     {
+        #region Given
         [Given(@"main page is opened")]
         public void GivenMainPageIsOpened()
         {
@@ -22,7 +18,9 @@ namespace TestProject
 
             ScenarioContext.Current.Add("homePage", homePage);
         }
-        
+        #endregion
+
+        #region When
         [When(@"click at the login link")]
         public void WhenClickAtTheLoginLink()
         {
@@ -41,7 +39,9 @@ namespace TestProject
             var privateCabinetPage = loginPage.LoggingIn((string)value.username,  (string)value.password);
             ScenarioContext.Current.Add("privateCabinetPage", privateCabinetPage);
         }
-        
+        #endregion
+
+        #region Then
         [Then(@"login has been successful")]
         public void ThenLoginHasBeenSuccessful()
         {
@@ -49,5 +49,6 @@ namespace TestProject
 
             privateCabinetPage.GetTitle().Should().BeEquivalentTo("Мой аккаунт - Интернет-магазин Skay.ua");
         }
+        #endregion
     }
 }
