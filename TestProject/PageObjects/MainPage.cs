@@ -20,16 +20,19 @@ namespace TestProject.PageObjects
 #pragma warning restore CS0618 // Type or member is obsolete
         }
 
-        public static MainPage NavigateTo()
+        public static MainPage instance = null;
+        public static MainPage GetInstance()
         {
-            return new MainPage();
+            if (instance == null)
+                return new MainPage();
+            return instance;
         }
 
         public LoginPage GoToLogin()
         {
             loginLink.Click();
 
-            return LoginPage.InitializeLoginPage();
+            return LoginPage.GetInstance();
         }
     }
 }

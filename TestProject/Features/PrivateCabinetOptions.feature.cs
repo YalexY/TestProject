@@ -95,7 +95,7 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("ordersButton", "История заказов - Интернет-магазин Skay.ua", null)]
         [NUnit.Framework.TestCaseAttribute("adressesButton", "Адреса - Интернет-магазин Skay.ua", null)]
         [NUnit.Framework.TestCaseAttribute("informationButton", "Идентификация - Интернет-магазин Skay.ua", null)]
-        [NUnit.Framework.TestCaseAttribute("cuponButton", "\"Скидка - Интернет-магазин Skay.ua\"", null)]
+        [NUnit.Framework.TestCaseAttribute("cuponButton", "Скидка - Интернет-магазин Skay.ua", null)]
         [NUnit.Framework.TestCaseAttribute("myMailButton", "Интернет-магазин Skay.ua", null)]
         [NUnit.Framework.TestCaseAttribute("wishListButton", "Интернет-магазин Skay.ua", null)]
         public virtual void SelectOptionApplying(string option, string page, string[] exampleTags)

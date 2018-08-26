@@ -12,7 +12,7 @@ namespace TestProject
         [Given(@"main page is opened")]
         public void GivenMainPageIsOpened()
         {
-            var homePage = MainPage.NavigateTo();
+            var homePage = MainPage.GetInstance();
 
             homePage.GetTitle().Should().BeEquivalentTo("Интернет-магазин Скай — купить смартфон, мобильный телефон в Одессе, c доставкой по Украине");
 

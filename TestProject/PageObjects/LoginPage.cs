@@ -22,9 +22,13 @@ namespace TestProject.PageObjects
 #pragma warning restore CS0618 // Type or member is obsolete
 
         }
-        public static LoginPage InitializeLoginPage()
+
+        public static LoginPage instance = null;
+        public static LoginPage GetInstance()
         {
-            return new LoginPage();
+            if (instance == null)
+                return new LoginPage();
+            return instance;
         }
 
         public PrivateCabinetPage LoggingIn(string email, string password)

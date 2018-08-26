@@ -19,6 +19,6 @@ Scenario Outline: Select option applying
 	| ordersButton      | История заказов - Интернет-магазин Skay.ua |
 	| adressesButton    | Адреса - Интернет-магазин Skay.ua          |
 	| informationButton | Идентификация - Интернет-магазин Skay.ua   |
-	| cuponButton       | "Скидка - Интернет-магазин Skay.ua"        |
+	| cuponButton       | Скидка - Интернет-магазин Skay.ua          |
 	| myMailButton      | Интернет-магазин Skay.ua                   |
 	| wishListButton    | Интернет-магазин Skay.ua                   |

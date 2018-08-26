@@ -39,9 +39,12 @@ namespace TestProject.PageObjects
 #pragma warning restore CS0618 // Type or member is obsolete
         }
 
+        public static PrivateCabinetPage instance = null;
         public static PrivateCabinetPage Initialize()
         {
-            return new PrivateCabinetPage();
+            if(instance == null)
+                return new PrivateCabinetPage();
+            return instance;
         }
     }
 }
