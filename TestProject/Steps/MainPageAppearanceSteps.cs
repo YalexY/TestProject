@@ -19,7 +19,7 @@ namespace TestProject.Steps
         [When(@"type url: (.*) to the browser")]
         public void WhenTypeUrlToTheBrowser(string url)
         {
-            var homePage = MainPage.NavigateTo();
+            var homePage = MainPage.GetInstance();
 
             ScenarioContext.Current.Add("homePage", homePage);
         }
